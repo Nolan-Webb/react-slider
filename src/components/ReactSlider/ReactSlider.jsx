@@ -350,9 +350,27 @@ class ReactSlider extends React.Component {
         snapDragDisabled: false,
         invert: false,
         marks: [],
-        renderThumb: props => <div {...props} />,
-        renderTrack: props => <div {...props} />,
-        renderMark: props => <span {...props} />,
+        renderThumb: props => {
+            const key = props.key; 
+            delete props.key; 
+            return (
+                <div key={key} {...props} />
+            )
+        },
+        renderTrack: props => {
+            const key = props.key; 
+            delete props.key; 
+            return (
+                <div key={key} {...props} />
+            )
+        },
+        renderMark: props => {
+            const key = props.key; 
+            delete props.key; 
+            return (
+                <span key={props.key} {...props} />
+            )
+        },
     };
 
     constructor(props) {
